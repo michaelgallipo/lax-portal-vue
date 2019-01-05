@@ -3,6 +3,8 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import ClubTeams from "./views/ClubTeams.vue";
 import HighSchool from "./views/HighSchool.vue";
+import Camps from "./views/Camps.vue";
+import Clinics from "./views/Clinics.vue";
 
 Vue.use(Router);
 
@@ -26,6 +28,16 @@ export default new Router({
       path: "/highschool",
       name: "highschool",
       component: HighSchool
+    },
+    {
+      path: "/camps",
+      name: "camps",
+      component: Camps
+    },
+    {
+      path: "/clinics",
+      name: "clinics",
+      component: Clinics
     }
   ]
 });
