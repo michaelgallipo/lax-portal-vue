@@ -5,6 +5,7 @@ import ClubTeams from "./views/ClubTeams.vue";
 import HighSchool from "./views/HighSchool.vue";
 import Camps from "./views/Camps.vue";
 import Clinics from "./views/Clinics.vue";
+import ClinicShow from "./views/ClinicShow.vue";
 
 Vue.use(Router);
 
@@ -38,6 +39,11 @@ export default new Router({
       path: "/clinics",
       name: "clinics",
       component: Clinics
+    },
+    {
+      path: "/clinics/:id",
+      name: "clinic_show",
+      component: ClinicShow
     }
   ]
 });

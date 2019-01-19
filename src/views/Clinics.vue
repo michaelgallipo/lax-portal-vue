@@ -1,8 +1,19 @@
 <template>
   <div class="clinics">
-    <h1>Area Lacrosse Clinics</h1>
+    <h1>Area Lacrosse Clinics</h1><br>
+
+      <div>
+        Clinic Type: &ensp;<select v-model="search_id" class="selectpicker" data-style="btn-info" style="margin-bottom: 20px; width: 200px; height: 40px">
+          <option class="dropdown-item" value="">All</option>
+          <option class="dropdown-item" value="General">General</option>
+          <option class="dropdown-item" value="Goalie">Goalie</option>
+          <option class="dropdown-item" value="Faceoff">Faceoff</option>
+        </select>
+      </div>
+
       <div v-for="clinic in clinics" class="col-lg-12">
-        <img  :src="clinic.image_url" style="height: 300px" alt="Card image cap">
+        <div v-if="clinic.clinic_type === search_id || search_id == '' ">
+        <router-link :to="'/clinics/' + clinic.id"><img  :src="clinic.image_url" style="height: 300px" alt="Card image cap"></router-link>
         <div class="card border-0" style="margin-bottom: 20px">
           <div class="card-body">
             <h3>{{clinic.name}}</h3>
@@ -17,15 +28,23 @@
           </div>
         </div>
       </div>
+    </div>
 </div>
 </template>
+
+<style>
+.card-body {
+    background: #2c3e50;
+}
+</style>
 
 <script>
 var axios = require("axios");
 export default {
   data: function() {
     return {
-      clinics: []
+      clinics: [],
+      search_id: ""
     };
   },
   created: function() {

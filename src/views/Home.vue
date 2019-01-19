@@ -3,6 +3,16 @@
     <img alt="Vue logo" src="../assets/howbigyouplay.jpg">
 <!--     <HelloWorld msg="Welcome to New Hampshire Lacrosse Portal"/> -->
     <h1>Welcome to New Hampshire Lacrosse Portal</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 

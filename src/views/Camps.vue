@@ -10,19 +10,73 @@
             <p class="card-text">{{camp.start_date}} - {{camp.end_date}}</p>
             <p class="card-text">For players in Grades {{camp.grade_start}} - {{camp.grade_end}}</p>
 <!--               <a :href="'http://' + camp.url" class="card-link">{{camp.name}}</a> -->
-            <a href="#/camps" v-on:click="openLink(camp)" >{{camp.website}}</a>
+            <a href="#/camps" v-on:click="openLink(camp)" >{{camp.website}}</a><br><br>
+            <button class="btn btn-outline-primary btn-md" v-on:click="setCamp(camp)" data-toggle="modal" data-target="#campShow">More Info</button>
           </div>
         </div>
       </div>
+
+        <!-- Modal -->
+      <div class="modal fade" id="campShow" tabindex="-1" role="dialog" aria-labelledby="campShowLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content" style="background: #cce6ff">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color:black">{{this.camp.name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="color:black; text-align: left">
+              <div>
+                <p>{{camp.description}}</p>
+                <p>{{camp.location}}</p>
+                <p>{{camp.start_date}} - {{camp.end_date}}</p>
+                <p>Hours: {{camp.time_span}}</p>
+                <p>Cost: {{camp.cost}}</p>
+                <p v-if="camp.overnight">Overnight Camp</p>
+                <p>Grades: {{camp.grade_start}} - {{camp.grade_end}}</p>
+              </div>
+<!--               <div class="form-group">
+              <label>Time:</label>
+              <input  class="form-control" v-model="performance.time">
+              </div>
+              <div class="form-group">
+              <label>Tickets Available:</label>
+              <input type="tickets_available" class="form-control" v-model="performance.tickets_available">
+              </div>
+              <div class="form-group">
+              <label>Tickets Sold:</label>
+              <input type="tickets_sold" class="form-control" v-model="performance.tickets_sold">
+              </div>
+              <div class="form-group">
+              <label>Ticket Price:</label>
+              <input type="ticket_price" class="form-control" v-model="performance.ticket_price">
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
 </template>
+
+<style>
+/*.camps {
+  color: white;
+  background: #2c3e50;
+}*/
+</style>
 
 <script>
 var axios = require("axios");
 export default {
   data: function() {
     return {
-      camps: []
+      camps: [],
+      camp: {}
     };
   },
   created: function() {
@@ -36,7 +90,11 @@ export default {
     openLink: function(camp) {
       console.log(camp);
       window.open('https://' + camp.website)
-    }
+    },
+    setCamp: function(camp) {
+      this.camp = camp;
+      console.log(this.camp);
+    },
   },
   computed: {}
 };

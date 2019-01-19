@@ -7,7 +7,7 @@
         <div v-for="club in clubs" class="col-lg-6">
           <img  :src="club.image" style="height: 150px" alt="Card image cap">
           <div class="card border-0" style="margin-bottom: 20px">
-            <div class="card-body">
+            <div class="card-body" id="club">
               <h3>{{club.name}}</h3>
               <p class="card-text">{{club.location}}</p>
               <p class="card-text">{{club.grades}}</p>
@@ -20,6 +20,17 @@
     </div>
   </div>
 </template>
+
+<style>
+.clubteams {
+  background: white;
+  color: #2c3e50;
+}
+#club {
+  background: white;
+  color: #2c3e50;
+}
+</style>
 
 <script>
 export default {
