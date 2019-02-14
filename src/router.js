@@ -6,6 +6,7 @@ import HighSchool from "./views/HighSchool.vue";
 import Camps from "./views/Camps.vue";
 import Clinics from "./views/Clinics.vue";
 import ClinicShow from "./views/ClinicShow.vue";
+import Resources from "./views/Resources.vue";
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: "/clinics/:id",
       name: "clinic_show",
       component: ClinicShow
+    },
+    {
+      path: "/resources",
+      name: "resources",
+      component: Resources
     }
   ]
 });

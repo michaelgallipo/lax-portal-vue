@@ -5,7 +5,8 @@
       <router-link to="/clubteams">Club Teams</router-link> |
       <router-link to="/camps">Camps</router-link> |
       <router-link to="/clinics">Clinics</router-link> |
-      <router-link to="/highschool">High School</router-link>
+      <router-link to="/highschool">High School</router-link> |
+      <router-link to="/resources">Resources</router-link> 
     </div>
     <router-view/>
   </div>

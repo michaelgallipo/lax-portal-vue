@@ -36,22 +36,6 @@
                 <p v-if="camp.overnight">Overnight Camp</p>
                 <p>Grades: {{camp.grade_start}} - {{camp.grade_end}}</p>
               </div>
-<!--               <div class="form-group">
-              <label>Time:</label>
-              <input  class="form-control" v-model="performance.time">
-              </div>
-              <div class="form-group">
-              <label>Tickets Available:</label>
-              <input type="tickets_available" class="form-control" v-model="performance.tickets_available">
-              </div>
-              <div class="form-group">
-              <label>Tickets Sold:</label>
-              <input type="tickets_sold" class="form-control" v-model="performance.tickets_sold">
-              </div>
-              <div class="form-group">
-              <label>Ticket Price:</label>
-              <input type="ticket_price" class="form-control" v-model="performance.ticket_price">
-              </div> -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
